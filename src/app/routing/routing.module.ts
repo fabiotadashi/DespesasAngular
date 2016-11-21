@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ListComponent }   from '../list/list.component';
 import { AddComponent }   from '../add/add.component';
+import { AddTipoComponent }   from '../addTipo/addTipo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
   { path: 'list',  component: ListComponent },
-  { path: 'add',  component: AddComponent }
+  { path: 'add',  component: AddComponent },
+  { path: 'addTipo',  component: AddTipoComponent }
 ];
 
 @NgModule({

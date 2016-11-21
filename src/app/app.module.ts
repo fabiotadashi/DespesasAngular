@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { AddComponent } from './add/add.component';
+import { AddTipoComponent } from './addTipo/addTipo.component';
 import { RoutingModule } from './routing/routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MomentModule} from 'angular2-moment';
@@ -31,7 +32,8 @@ import { DespesaService } from './despesa.service';
   declarations: [
     AppComponent,
     ListComponent,
-    AddComponent
+    AddComponent,
+	AddTipoComponent
   ],
   imports: [
     BrowserModule,

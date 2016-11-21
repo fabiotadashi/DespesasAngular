@@ -24,8 +24,12 @@
         <div class="input-group-addon">R$</div>
         <input type="number" [(ngModel)]="despesa.valor" id="valor" class="form-control text-right" required placeholder="Digite o valor...">
 			</div>
+		<div>&nbsp;</div>	
       <div class="form-group">
-          <button class="btn btn-primary" (click)="save()"><div class="glyphicon glyphicon-usd"></div> Salvar despesa</button>
+          <button class="btn btn-primary" (click)="save()"><div class="glyphicon glyphicon-floppy-disk"></div> Salvar Despesa</button>
+      </div>
+	  <div class="form-group">
+          <button class="btn btn-primary" (click) = "saveTipo()"><div class="glyphicon glyphicon-plus"></div> Adicionar Tipo de Despesa</button>
       </div>
     </div>
 </div>
