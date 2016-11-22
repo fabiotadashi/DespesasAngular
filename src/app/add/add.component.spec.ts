@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AddComponent } from './add.component';
+import { AddComponent } from './addTipo.component';
 
 describe('AddComponent', () => {
   let component: AddComponent;

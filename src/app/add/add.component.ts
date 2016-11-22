@@ -12,6 +12,7 @@ import { Despesa }                from '../despesa';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
+
 export class AddComponent implements OnInit {
     despesa: Despesa;
     data: String;
@@ -29,4 +30,10 @@ export class AddComponent implements OnInit {
       this.router.navigate(['/list']);
   }
 
+  saveTipo() : void {
+      this.despesa.data = new Date(this.data+"T12:00:00Z");
+      this.despesaService.save(this.despesa);
+      this.router.navigate(['/addTipo']);
+  }
+  
 }

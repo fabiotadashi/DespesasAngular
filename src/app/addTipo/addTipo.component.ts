@@ -28,10 +28,16 @@ export class AddTipoComponent implements OnInit {
       this.despesaService.save(this.despesa);
       this.router.navigate(['/addTipo']);
   }
+   voltar() : void {
+      this.despesa.data = new Date(this.data+"T12:00:00Z");
+      this.despesaService.save(this.despesa);
+      this.router.navigate(['/add']);
+  }
 
 } 
-/*
-@Component({
+
+
+/*@Component({
   selector: 'app-addTipo',
   templateUrl: './addTipo.component.html',
   styleUrls: ['./addTipo.component.css']
@@ -88,5 +94,5 @@ export class AddTipoComponent implements OnInit {
          window.localStorage['tipoDespesas'] = JSON.stringify(aTipoDespesas);
         $(this).parent().parent().hide();
     })
-*/
 
+*/
