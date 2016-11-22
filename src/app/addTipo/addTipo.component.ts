@@ -7,6 +7,8 @@ import { DespesaService }         from '../despesa.service';
 /* Classes */
 import { Despesa }                from '../despesa';
 
+
+
 @Component({
   selector: 'app-addTipo',
   templateUrl: './addTipo.component.html',
