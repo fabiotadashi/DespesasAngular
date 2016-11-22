@@ -8,7 +8,7 @@ import { DespesaService }         from '../despesa.service';
 import { Despesa }                from '../despesa';
 
 
-
+//teste de commit
 @Component({
   selector: 'app-addTipo',
   templateUrl: './addTipo.component.html',
