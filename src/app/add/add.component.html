@@ -2,9 +2,7 @@
     <div class="form-group">
       <label for="tipo">Tipo da Despesa</label>
       <select [(ngModel)]="despesa.tipo" id="tipo" class="form-control">
-        <option value="Mercado">Mercado</option>
-        <option value="Lazer">Lazer</option>
-        <option value="Saúde">Saúde</option>
+       <option  *ngFor="let tipoDespesa of listaTipo" value="{{tipoDespesa.nome}}">{{tipoDespesa.nome}}</option>
       </select>
     </div>
     <div class="form-group">
@@ -29,7 +27,7 @@
           <button class="btn btn-primary" (click)="save()"><div class="glyphicon glyphicon-floppy-disk"></div> Salvar Despesa</button>
       </div>
 	  <div class="form-group">
-          <button class="btn btn-primary" (click) = "saveTipo()"><div class="glyphicon glyphicon-plus"></div> Adicionar Tipo de Despesa</button>
+          <button class="btn btn-primary" (click) = "adicionarTipo()"><div class="glyphicon glyphicon-plus"></div> Adicionar Tipo de Despesa</button>
       </div>
     </div>
 </div>

@@ -3,9 +3,11 @@ import { Router }            from '@angular/router';
 
 /* Serviços */
 import { DespesaService }         from '../despesa.service';
+import { TipoDespesaService }         from '../tipoDespesa.service';
 
 /* Classes */
 import { Despesa }                from '../despesa';
+import { TipoDespesa }                from '../tipoDespesa';
 
 @Component({
   selector: 'app-add',
@@ -16,12 +18,16 @@ import { Despesa }                from '../despesa';
 export class AddComponent implements OnInit {
     despesa: Despesa;
     data: String;
+    listaTipo : TipoDespesa[];
 
-  constructor(  private despesaService : DespesaService,
+  constructor(  
+                private despesaService : DespesaService,
+                private tipoDespesaService: TipoDespesaService,
                 private router: Router) { }
 
   ngOnInit() {
       this.despesa = new Despesa(new Date().getTime(), "", "", "", new Date(), 0);
+      this.listaTipo=this.tipoDespesaService.getTipoDespesas();
   }
 
   save() : void {
@@ -30,9 +36,8 @@ export class AddComponent implements OnInit {
       this.router.navigate(['/list']);
   }
 
-  saveTipo() : void {
-      this.despesa.data = new Date(this.data+"T12:00:00Z");
-      this.despesaService.save(this.despesa);
+  adicionarTipo() : void {
+     
       this.router.navigate(['/addTipo']);
   }
   

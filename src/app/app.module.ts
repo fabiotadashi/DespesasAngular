@@ -11,7 +11,7 @@ import { AddComponent } from './add/add.component';
 import { AddTipoComponent } from './addTipo/addTipo.component';
 import { RoutingModule } from './routing/routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MomentModule} from 'angular2-moment';
+import { MomentModule } from 'angular2-moment';
 import 'moment/locale/pt-BR'
 
 /* LocalStorage */
@@ -20,20 +20,21 @@ import { LocalStorageService, LOCAL_STORAGE_SERVICE_CONFIG } from 'angular-2-loc
 
 // Create config options (see ILocalStorageServiceConfigOptions) for deets:
 let localStorageServiceConfig = {
-    prefix: 'despesasapp',
-    storageType: 'localStorage'
+  prefix: 'despesasapp',
+  storageType: 'localStorage'
 };
 
 
 /* Serviços */
 import { DespesaService } from './despesa.service';
+import { TipoDespesaService } from './tipoDespesa.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     AddComponent,
-	AddTipoComponent
+    AddTipoComponent
   ],
   imports: [
     BrowserModule,
@@ -44,10 +45,11 @@ import { DespesaService } from './despesa.service';
     MomentModule
   ],
   providers: [DespesaService,
+             TipoDespesaService,
             LocalStorageService,
-            {
-                provide: LOCAL_STORAGE_SERVICE_CONFIG, useValue: localStorageServiceConfig
-            }],
+    {
+      provide: LOCAL_STORAGE_SERVICE_CONFIG, useValue: localStorageServiceConfig
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
