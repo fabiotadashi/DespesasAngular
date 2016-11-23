@@ -16,35 +16,30 @@ import { TipoDespesa } from '../tipoDespesa';
 export class AddTipoComponent implements OnInit {
 
     tipoDespesa: TipoDespesa;
-    listaTipo : TipoDespesa[];
-     invisiveis: boolean[]=[];
-    
+    listaTipo: TipoDespesa[];
+    invisiveis: boolean[] = [];
+
     constructor(private tipoDespesaService: TipoDespesaService,
         private router: Router) { }
 
-
     ngOnInit() {
-        this.tipoDespesa = new TipoDespesa(new Date().getTime(), "");
-        this.listaTipo=this.tipoDespesaService.getTipoDespesas();
+        this.tipoDespesa = new TipoDespesa(new Date().getTime(), "", "");
+        this.listaTipo = this.tipoDespesaService.getTipoDespesas();
     }
 
-
     voltar(): void {
-
         this.router.navigate(['/add']);
     }
 
-    
     adicionar(): void {
-         console.log(this.tipoDespesa);
-         this.tipoDespesaService.save(this.tipoDespesa);
-         this.listaTipo=this.tipoDespesaService.getTipoDespesas();
-
+        this.tipoDespesaService.save(this.tipoDespesa);
+        this.listaTipo = this.tipoDespesaService.getTipoDespesas();
     }
+
     delete(id: number): void {
-    this.tipoDespesaService.delete(id);
-    this.invisiveis[id] = true;
-  }
+        this.tipoDespesaService.delete(id);
+        this.invisiveis[id] = true;
+    }
 
 
 

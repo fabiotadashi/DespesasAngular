@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                     <tr [hidden]="invisiveis[despesa.id]"  *ngFor="let despesa of despesas">
-                        <td><div class="glyphicon {{despesa.icone}}"></div> {{despesa.tipo}}</td>
+                        <td><div class="glyphicon glyphicon-{{despesa.icone}}"></div> {{despesa.tipo}}</td>
                         <td>{{despesa.data | amTimeAgo }}</td>
                         <td>{{despesa.nome}}</td>
                         <td>{{despesa.valor}}</td>

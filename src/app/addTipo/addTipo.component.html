@@ -1,38 +1,38 @@
+<div class="form-group">
+    <label for="nome">Tipo de Despesa</label>
+    <input type="text" id="nome" [(ngModel)]="tipoDespesa.nome" name="nome" required placeholder="Digite o tipo de despesa..."
+        class="form-control">
+</div>
+<div class="form-group">
+    <label for="icon">Icone de Despesa</label>
+    <input type="text" id="icon" [(ngModel)]="tipoDespesa.icone" name="icon" required placeholder="Digite o glyphicon (ex. 'shopping-cart')..."
+        class="form-control">
+</div>
+
+<div class="form-group">
+    <button class="btn btn-primary" (click)="adicionar()"><div class="glyphicon glyphicon-plus"></div> Adicionar Tipo </button>
+    <button class="btn btn-primary" (click)="voltar()"><div class="glyphicon glyphicon-arrow-left"></div> Voltar </button>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Icone</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody id="tabela_corpo">
+            <tr *ngFor="let tipoDespesa of listaTipo">
+                <td>{{tipoDespesa.nome}}</td>
+                <td><div class="glyphicon glyphicon-{{tipoDespesa.icone}}"></div></td>
+                <td><button class="delete" (click)="delete(tipoDespesa.id)"><div class="glyphicon glyphicon-trash"></div></button></td>
+            </tr>
+
+        </tbody>
 
 
 
-            
-            <div class="form-group">
-                <label for="nome">Tipo de Despesa</label>
-                <input type="text" id="nome"  [(ngModel)]="tipoDespesa.nome"   name="nome" required placeholder="Digite o tipo de despesa..."
-                class="form-control">
-			</div>
-            <div class="form-group">
-            
-			<button class="btn btn-primary" (click) = "adicionar()"><div class="glyphicon glyphicon-plus"></div> Adicionar Tipo </button>
-			<button class="btn btn-primary" (click) = "voltar()"><div class="glyphicon glyphicon-arrow-left"></div> Voltar </button>
-            </div>
-         <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        
-                    </tr>
-                </thead>
-                
-                <tbody id="tabela_corpo">                                   
-                    <tr *ngFor="let tipoDespesa of listaTipo">
-                        <td>{{tipoDespesa.nome}}</td>
-                <button class="delete" (click)="delete(tipoDespesa.id)"><div class="glyphicon glyphicon-trash"></div></button>     
-                        
-                   
-                   </tr>
-                
-                </tbody>
-
-
-
-            </table>
-        </div>
-
+    </table>
+</div>
